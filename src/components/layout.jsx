@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     }
   .active {
-    text-decoration: underline #dd2c00;
+    text-decoration: underline #fff;
     text-underline-position: under;
     
     }

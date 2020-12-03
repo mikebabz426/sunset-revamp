@@ -10,7 +10,7 @@ const CardHolder = styled.div`
   align-items: center;
   justify-content: center;
   text-align: justify;
-  background-color: #f8f8f8;
+  background-color: #fff;
   border-radius: 5px;
 `
 
@@ -28,6 +28,7 @@ const Body = styled.p`
   text-align: justify;
   max-width: 300px;
   margin: 1rem 0.5rem;
+  line-height: 1.5rem;
 `
 const Card = ({ title, fluid }) => {
   return (

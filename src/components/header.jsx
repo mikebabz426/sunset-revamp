@@ -75,7 +75,7 @@ const StyledLink = styled(Link)`
   font-weight: 500;
   margin: 0 1rem;
   &:hover {
-    color: #dd2c00;
+    color: #fff;
   }
 `
 const MobileLinks = styled.nav`
@@ -126,17 +126,6 @@ const MobileLinks = styled.nav`
 
 const Header = () => {
   const [nav, setNav] = useState(false)
-  // const [navBg, setNavBg] = useState(false)
-
-  // const changeBg = () => {
-  //   if (window.scrollY > 100) {
-  //     setNavBg(true)
-  //   } else {
-  //     setNavBg(false)
-  //   }
-  // }
-
-  // window.addEventListener("scroll", changeBg)
 
   return (
     <NavWrap>
