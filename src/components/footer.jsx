@@ -1,37 +1,37 @@
 import React from "react"
 import styled from "styled-components"
-// import FB from "../assets/facebook.svg"
-// import IG from "../assets/instagram.svg"
-// import TW from "../assets/twitter.svg"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import TwitterIcon from "@material-ui/icons/Twitter"
 
 const Container = styled.div`
-  width: 100%;
-  padding: 1rem;
+  width: 100vw;
+  height: 25vh;
   text-align: center;
-  background-color: #ff8a65;
+  background-color: #ff928b;
 `
 
 const Heading = styled.h3`
   color: #333;
   font-weight: 500;
+  padding: 2rem;
+  margin: 0;
 `
 
 const SecondaryText = styled.h5`
   font-weight: 500;
+  color: #333;
 `
 const IconContainer = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
 `
 
 const SocialIconBox = styled.div`
-  margin: 3rem 1rem;
+  margin: 0 0.2rem 1rem 0.2rem;
   display: flex;
   align-items: center;
   justify-content: center;

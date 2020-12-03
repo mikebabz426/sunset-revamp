@@ -7,10 +7,11 @@ import CloseIcon from "@material-ui/icons/Close"
 
 const NavWrap = styled.header`
   height: 64px;
-  background-color: ${props => (props.bgcolor ? " #ff8a65" : "transparent")};
+  background-color: #ff928b;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
+  z-index: 1;
 `
 const Nav = styled.nav`
   margin: 0 auto;
@@ -71,14 +72,14 @@ const MenuLinks = styled.ul`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #333;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 1rem;
   &:hover {
-    color: #ffbb93;
+    color: #dd2c00;
   }
 `
 const MobileLinks = styled.nav`
-  background-color: #f89475;
+  background-color: #ff928b;
   z-index: -1;
   display: flex;
   flex-direction: column;
@@ -104,19 +105,20 @@ const MobileLinks = styled.nav`
       padding: 2rem 0;
       width: 100%;
       :hover {
-        background-color: #ffbb93;
+        background-color: #fe6d73;
       }
     }
 
     a {
       text-decoration: none;
       color: #000;
-      font-size: 1.5rem;
+      font-weight: 500;
+      font-size: 1.3rem;
       transition: color 300ms;
       width: 100%;
 
       :hover {
-        background-color: #ffbb93;
+        background-color: #fe6d73;
       }
     }
   }
@@ -124,20 +126,20 @@ const MobileLinks = styled.nav`
 
 const Header = () => {
   const [nav, setNav] = useState(false)
-  const [navBg, setNavBg] = useState(false)
+  // const [navBg, setNavBg] = useState(false)
 
-  const changeBg = () => {
-    if (window.scrollY > 64) {
-      setNavBg(true)
-    } else {
-      setNavBg(false)
-    }
-  }
+  // const changeBg = () => {
+  //   if (window.scrollY > 100) {
+  //     setNavBg(true)
+  //   } else {
+  //     setNavBg(false)
+  //   }
+  // }
 
-  window.addEventListener("scroll", changeBg)
+  // window.addEventListener("scroll", changeBg)
 
   return (
-    <NavWrap bgcolor={navBg}>
+    <NavWrap>
       <Nav>
         <LogoElement>
           <LogoWrap>
