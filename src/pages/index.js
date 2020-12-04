@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import Button from "./../components/Button"
 import Card from "../components/Card"
+import Testimonial from "./../components/Testimonial"
 import Img from "gatsby-image"
 
 const Headline = styled.h1`
@@ -58,6 +59,7 @@ const SubHeadline = styled.h3`
   text-align: center;
   max-width: 1280;
   margin: 1rem 0;
+  font-size: 20px;
 `
 const CardArea = styled.div`
   margin: 3rem auto;
@@ -122,15 +124,22 @@ const TextArea = styled.p`
   color: #333;
   font-weight: 500;
 `
+const TestimonialSection = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8f8;
+  padding-top: 3rem;
+`
+
 const Stripe = styled.div`
-  max-width: 100%;
-  margin: 12rem auto 0rem auto;
-  background-color: #ff928b;
+  background-color: #ffdddb;
+  margin: 12rem auto 12rem auto;
+  width: 100%;
+  height: 300px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* position: relative;
-  margin-top: 8rem; */
+  position: relative;
   @media (max-width: 600px) {
     display: none;
   }
@@ -141,7 +150,8 @@ const OffsetContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: absolute; */
+  position: absolute;
+  top: -200px;
 `
 
 const IndexPage = ({ data }) => {
@@ -202,25 +212,37 @@ const IndexPage = ({ data }) => {
           <ImageHolder fluid={angel.childImageSharp.fluid}></ImageHolder>
         </GoodDogSection>
       </Showcase>
-      <Showcase style={{ backgroundColor: "#f8f8f8", paddingTop: "3rem" }}>
+      <TestimonialSection>
         <Headline>Don't take our word for it</Headline>
+        <SubHeadline>
+          Here's what some of our customers had to say about their experience
+        </SubHeadline>
         <Stripe>
           <OffsetContainer>
-            <Card
-              title="Behavioral Issues"
-              fluid={behavioral.childImageSharp.fluid}
-            />
-            <Card
-              title="Behavioral Issues"
-              fluid={behavioral.childImageSharp.fluid}
-            />
-            <Card
-              title="Behavioral Issues"
-              fluid={behavioral.childImageSharp.fluid}
-            />
+            <Testimonial name="Elena Rose Weinstein Ortega">
+              Great training facility and great environment for your dog!!
+              Highly recommend this place!
+              <span style={{ fontStyle: "normal" }}>😃</span>
+            </Testimonial>
+            <Testimonial name="Kendal Henning">
+              Hannah is amazing! My dog Koda completed a 4 week board and train
+              for obedience work, off leash work, and e collar work. He has
+              completely transformed and has been able to learn and grasp so
+              many things at only 6 months old! I am so excited to continue his
+              progression and training at home! Well worth the investment in
+              your dog. Would highly recommend Sunset Canines
+              <span style={{ fontStyle: "normal" }}> 🤗</span>
+            </Testimonial>
+            <Testimonial name="Grey Marie ">
+              My boys only got a short stay out of Sunset Canines back in July,
+              but I feel that my dog Kenai learned important things about
+              communicating with dogs, and Remi (extreme stranger fear) got the
+              opportunity to work with people besides me which has opened him up
+              more.
+            </Testimonial>
           </OffsetContainer>
         </Stripe>
-      </Showcase>
+      </TestimonialSection>
     </Layout>
   )
 }
