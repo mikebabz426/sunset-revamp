@@ -17,8 +17,12 @@ const Headline = styled.h1`
   max-width: 1280px;
   margin: 1.5rem auto;
 
-  @media (max-width: 600px) {
-    font-size: 32px;
+  @media screen and (max-width: 800px) {
+    font-size: 38px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
     max-width: 350px;
   }
 `
@@ -44,6 +48,10 @@ const Showcase = styled.div`
   padding: 3rem auto;
   min-height: 100vh;
   max-width: 1280;
+
+  @media screen and (min-width: 1024px) {
+    max-height: 100vh;
+  }
 `
 const SectionHeadline = styled.h2`
   color: #333;
@@ -68,7 +76,11 @@ const CardArea = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  @media (max-width: 600px) {
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 600px) {
     flex-direction: column;
   }
 `
@@ -79,7 +91,7 @@ const CalltoAction = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `
@@ -126,21 +138,25 @@ const TextArea = styled.p`
 `
 const TestimonialSection = styled.div`
   width: 100vw;
-  height: 100vh;
   background-color: #f8f8f8;
   padding-top: 3rem;
 `
 
 const Stripe = styled.div`
   background-color: #ffdddb;
-  margin: 12rem auto 12rem auto;
+  margin: 15rem auto 12rem auto;
   width: 100%;
-  height: 300px;
+  height: 320px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: relative;
-  @media (max-width: 600px) {
+
+  @media screen and (max-width: 800px) {
+    margin: 30rem auto 30rem auto;
+  }
+
+  @media screen and (max-width: 600px) {
     display: none;
   }
 `
@@ -152,6 +168,33 @@ const OffsetContainer = styled.div`
   align-items: center;
   position: absolute;
   top: -200px;
+
+  @media screen and (min-width: 1000px) and (max-width: 1100px) {
+    width: 990px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 750px;
+    flex-wrap: wrap;
+    position: static;
+  }
+`
+
+const MobileContainer = styled.div`
+  margin: 3rem auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: 601px) {
+    display: none;
+  }
+`
+const Filler = styled.div`
+  height: 5vh;
+  width: 100vw;
+  background-color: #f8f8f8;
 `
 
 const IndexPage = ({ data }) => {
@@ -222,7 +265,13 @@ const IndexPage = ({ data }) => {
             <Testimonial name="Elena Rose Weinstein Ortega">
               Great training facility and great environment for your dog!!
               Highly recommend this place!
-              <span style={{ fontStyle: "normal" }}>😃</span>
+              <span
+                role="img"
+                aria-label="smiley"
+                style={{ fontStyle: "normal" }}
+              >
+                😃
+              </span>
             </Testimonial>
             <Testimonial name="Kendal Henning">
               Hannah is amazing! My dog Koda completed a 4 week board and train
@@ -231,7 +280,14 @@ const IndexPage = ({ data }) => {
               many things at only 6 months old! I am so excited to continue his
               progression and training at home! Well worth the investment in
               your dog. Would highly recommend Sunset Canines
-              <span style={{ fontStyle: "normal" }}> 🤗</span>
+              <span
+                role="img"
+                aria-label="smiley"
+                style={{ fontStyle: "normal" }}
+              >
+                {" "}
+                🤗
+              </span>
             </Testimonial>
             <Testimonial name="Grey Marie ">
               My boys only got a short stay out of Sunset Canines back in July,
@@ -242,6 +298,43 @@ const IndexPage = ({ data }) => {
             </Testimonial>
           </OffsetContainer>
         </Stripe>
+        <MobileContainer>
+          <Testimonial name="Elena Rose Weinstein Ortega">
+            Great training facility and great environment for your dog!! Highly
+            recommend this place!
+            <span
+              role="img"
+              aria-label="smiley"
+              style={{ fontStyle: "normal" }}
+            >
+              😃
+            </span>
+          </Testimonial>
+          <Testimonial name="Kendal Henning">
+            Hannah is amazing! My dog Koda completed a 4 week board and train
+            for obedience work, off leash work, and e collar work. He has
+            completely transformed and has been able to learn and grasp so many
+            things at only 6 months old! I am so excited to continue his
+            progression and training at home! Well worth the investment in your
+            dog. Would highly recommend Sunset Canines
+            <span
+              role="img"
+              aria-label="smiley"
+              style={{ fontStyle: "normal" }}
+            >
+              {" "}
+              🤗
+            </span>
+          </Testimonial>
+          <Testimonial name="Grey Marie ">
+            My boys only got a short stay out of Sunset Canines back in July,
+            but I feel that my dog Kenai learned important things about
+            communicating with dogs, and Remi (extreme stranger fear) got the
+            opportunity to work with people besides me which has opened him up
+            more.
+          </Testimonial>
+        </MobileContainer>
+        <Filler></Filler>
       </TestimonialSection>
     </Layout>
   )

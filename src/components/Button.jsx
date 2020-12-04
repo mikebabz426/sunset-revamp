@@ -18,6 +18,10 @@ const FilledButton = styled(Link)`
   :focus {
     outline: none;
   }
+
+  @media (max-width: 600px) {
+    padding: 0.75rem;
+  }
 `
 const OutlinedButton = styled(Link)`
   background-color: #fff;
@@ -35,6 +39,10 @@ const OutlinedButton = styled(Link)`
   }
   :focus {
     outline: none;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.5rem;
   }
 `
 

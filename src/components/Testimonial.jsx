@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 })
 
 const CardHolder = styled.div`
-  margin: auto auto;
+  margin: 1rem auto;
   max-width: 320px;
   max-height: 500px;
   display: flex;
