@@ -15,7 +15,7 @@ const Headline = styled.h1`
   font-size: 64px;
   text-align: center;
   max-width: 1280px;
-  margin: 1.5rem auto;
+  margin: 0 auto 1.5rem auto;
 
   @media screen and (max-width: 800px) {
     font-size: 38px;
@@ -46,11 +46,11 @@ const ButtonBox = styled.div`
 const Showcase = styled.div`
   margin: 0 auto;
   padding: 3rem auto;
-  min-height: 100vh;
+  min-height: 50vh;
   max-width: 1280;
 
   @media screen and (min-width: 1024px) {
-    max-height: 100vh;
+    max-height: 120vh;
   }
 `
 const SectionHeadline = styled.h2`

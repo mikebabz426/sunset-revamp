@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 const CardHolder = styled.div`
-  margin: 2rem auto;
+  margin: 2rem 1rem;
   max-width: 320px;
   display: flex;
   flex-direction: column;
