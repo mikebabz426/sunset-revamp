@@ -130,11 +130,11 @@ const TextContainer = styled.div`
 `
 const TextArea = styled.p`
   text-align: justify;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.8rem;
   width: 350px;
-  color: #333;
-  font-weight: 500;
+  color: #535353;
+  font-weight: lighter;
 `
 const TestimonialSection = styled.div`
   width: 100vw;

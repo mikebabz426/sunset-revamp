@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Heading = styled.h3`
   color: #333;
-  font-weight: 500;
+  font-weight: lighter;
   padding: 2rem;
   margin: 0;
 `

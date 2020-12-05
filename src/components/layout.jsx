@@ -2,13 +2,14 @@ import React from "react"
 import Header from "./Header"
 import Footer from "./Footer"
 import "normalize.css"
+import "fontsource-roboto/500.css"
 import styled, { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
   }

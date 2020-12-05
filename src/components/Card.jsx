@@ -19,7 +19,7 @@ const ImageHolder = styled(Img)`
   height: 300px;
   border-radius: 5px 5px 0 0;
 `
-const CardHead = styled.h4`
+const CardHead = styled.h3`
   font-weight: bold;
   margin: 1rem 0 0 0;
 `
@@ -29,6 +29,7 @@ const Body = styled.p`
   max-width: 300px;
   margin: 1rem 0.5rem;
   line-height: 1.5rem;
+  color: #525252;
 `
 const Card = ({ title, fluid }) => {
   return (

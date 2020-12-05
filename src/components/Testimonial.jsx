@@ -37,11 +37,12 @@ const Header = styled.div`
 `
 
 const Name = styled.h5`
-  font-weight: bold;
   margin: 1rem 0 1rem 0;
+  font-weight: lighter;
 `
 
 const Body = styled.p`
+  color: #5f5f5f;
   text-align: center;
   font-style: italic;
   font-size: small;
