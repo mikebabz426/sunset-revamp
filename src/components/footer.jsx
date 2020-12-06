@@ -6,7 +6,7 @@ import TwitterIcon from "@material-ui/icons/Twitter"
 
 const Container = styled.div`
   width: 100vw;
-  height: 25vh;
+  min-height: 25vh;
   text-align: center;
   background-color: #ff928b;
 `

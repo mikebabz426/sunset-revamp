@@ -15,6 +15,7 @@ const Headline = styled.h1`
   font-size: 64px;
   text-align: center;
   max-width: 1280px;
+  padding: 0 4rem;
   margin: 0 auto 1.5rem auto;
 
   @media screen and (max-width: 800px) {
@@ -24,6 +25,7 @@ const Headline = styled.h1`
   @media screen and (max-width: 600px) {
     font-size: 28px;
     max-width: 350px;
+    padding: 0 1rem;
   }
 `
 const BgImage = styled(BackgroundImage)`
