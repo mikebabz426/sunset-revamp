@@ -22,7 +22,6 @@ const Nav = styled.nav`
   justify-content: space-between;
 `
 const LogoElement = styled.div`
-  margin: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;

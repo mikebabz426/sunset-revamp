@@ -4,6 +4,7 @@ import SEO from "../components/SEO"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import Dots from "../assets/dots.svg"
+import { graphql } from "gatsby"
 
 const Showcase = styled.div`
   max-width: 1280px;
