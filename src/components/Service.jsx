@@ -1,54 +1,78 @@
 import React from "react"
 import Img from "gatsby-image"
-import ServiceStyle from "./Service.module.scss"
 import styled from "styled-components"
 
-const ImageHolder = styled(Img)`
-  height: 350px;
-  width: 350px;
+const Container = styled.div`
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 768px;
+  border-bottom: 1px solid #c7c7c7;
+
+  @media screen and (min-width: 1024px) {
+    min-width: 1024px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    min-width: 300px;
+    padding: 1rem 0;
+  }
 `
 
-const Service = ({ direction, name, src }) => {
+const ImageHolder = styled(Img)`
+  height: 300px;
+  width: 350px;
+  border-radius: 3px;
+  padding: 1rem;
+`
+const Title = styled.h3`
+  color: #333;
+  padding-bottom: 1rem;
+`
+const TextArea = styled.div`
+  max-width: 360px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+const Description = styled.p`
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.7rem;
+  width: 350px;
+  color: #535353;
+  font-weight: lighter;
+`
+
+const Service = ({ dir, name, src, desc }) => {
   let layout
-  if (direction === "left") {
+  if (dir === "left") {
     layout = (
-      <>
-        <Image fluid={src} className={ServiceStyle.image} />
-        <div className={ServiceStyle.textArea}>
-          <h2>{name}</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-            blanditiis numquam ipsa! Earum at, distinctio in, consectetur vel
-            molestias officia libero quidem, suscipit ut quae delectus eius
-            praesentium quaerat nostrum. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Possimus blanditiis numquam ipsa! Earum at,
-            distinctio in, consectetur vel molestias officia libero quidem,
-            suscipit ut quae delectus eius praesentium quaerat nostrum.
-          </p>
-        </div>
-      </>
+      <Container>
+        <ImageHolder fluid={src} />
+        <TextArea>
+          <Title>{name}</Title>
+          <Description>{desc}</Description>
+        </TextArea>
+      </Container>
     )
-  } else if (direction === "right") {
+  } else if (dir === "right") {
     layout = (
-      <>
-        <div>
-          <h2>{name}</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-            blanditiis numquam ipsa! Earum at, distinctio in, consectetur vel
-            molestias officia libero quidem, suscipit ut quae delectus eius
-            praesentium quaerat nostrum. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Possimus blanditiis numquam ipsa! Earum at,
-            distinctio in, consectetur vel molestias officia libero quidem,
-            suscipit ut quae delectus eius praesentium quaerat nostrum.
-          </p>
-          <ImageHolder fluid={src} />
-        </div>
-      </>
+      <Container>
+        <TextArea>
+          <Title>{name}</Title>
+          <Description>{desc}</Description>
+        </TextArea>
+        <ImageHolder fluid={src} />
+      </Container>
     )
   }
 
-  return <section className={ServiceStyle.service}>{layout}</section>
+  return <section>{layout}</section>
 }
 
 export default Service
