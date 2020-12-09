@@ -15,7 +15,7 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 767px) {
-    flex-direction: column;
+    flex-direction: ${props => (props.clmn ? "column" : "column-reverse")};
     min-width: 300px;
     padding: 1rem 0;
   }
@@ -52,7 +52,7 @@ const Service = ({ dir, name, src, desc }) => {
   let layout
   if (dir === "left") {
     layout = (
-      <Container>
+      <Container clmn="reverse">
         <ImageHolder fluid={src} />
         <TextArea>
           <Title>{name}</Title>
