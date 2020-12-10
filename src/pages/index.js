@@ -208,8 +208,8 @@ const IndexPage = ({ data }) => {
       <BgImage className="hero" fluid={hero.childImageSharp.fluid}>
         <Headline>We Provide Proffessional Training for Your Pets</Headline>
         <ButtonBox>
-          <Button type="filled" text="What We Offer" />
-          <Button type="outlined" text="Contact Us" />
+          <Button type="filled" text="What We Offer" pageLink="/services" />
+          <Button type="outlined" text="Contact Us" pageLink="/contact" />
         </ButtonBox>
       </BgImage>
       <Showcase style={{ backgroundColor: "#f8f8f8" }}>
@@ -234,7 +234,7 @@ const IndexPage = ({ data }) => {
           <SubHeadline>
             Let us help you get started off on the right... paw.
           </SubHeadline>
-          <Button type="outlined" text="Click Here" />
+          <Button type="outlined" text="Click Here" pageLink="/contact" />
           <SubHeadline>to see the full spectrum of our services.</SubHeadline>
         </CalltoAction>
       </Showcase>

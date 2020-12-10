@@ -6,6 +6,8 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { ProvidedServices } from "./../helpers/services-info"
 import Service from "./../components/Service"
+import Bullet from "./../components/Bullet"
+import Button from "./../components/Button"
 
 const Headline = styled.h1`
   font-weight: bold;
@@ -61,6 +63,83 @@ const ImageHolder = styled(Img)`
     bottom: -115px;
   }
 `
+const Additional = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 768px;
+
+  @media screen and (min-width: 1024px) {
+    min-width: 1024px;
+  }
+
+  @media screen and (max-width: 767px) {
+    min-width: 300px;
+    padding: 1rem 0;
+  }
+`
+const AdditionalHeadline = styled.h2`
+  font-weight: bold;
+  color: #333;
+  font-size: 40px;
+  text-align: center;
+  max-width: 1280px;
+  padding: 2rem 4rem 0 4rem;
+  margin: 0 auto 1.5rem auto;
+
+  @media screen and (max-width: 800px) {
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+    max-width: 350px;
+    padding: 4rem 1rem 2rem 1rem;
+  }
+`
+const Wrapper = styled.div`
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  min-width: 768px;
+  border-bottom: 1px solid #c7c7c7;
+
+  /* @media screen and (min-width: 1024px) {
+    min-width: 768px;
+  } */
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    min-width: 300px;
+    padding: 1rem 0;
+  }
+`
+const Bullets = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 350px;
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 2rem;
+  }
+`
+
+const CallToAction = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+`
+const Message = styled.h2`
+  font-weight: lighter;
+  text-align: center;
+  color: #333;
+  padding: 0rem 0rem 2rem 0rem;
+`
 
 const ServicesPage = ({ data }) => {
   const { dogs, offLeash, sar, belgian, serviceDog, tricks } = data
@@ -103,6 +182,26 @@ const ServicesPage = ({ data }) => {
             />
           )
         })}
+        <Additional>
+          <AdditionalHeadline>Additional Services</AdditionalHeadline>
+          <Wrapper>
+            <Bullets>
+              <Bullet service="Scent Work" />
+              <Bullet service="Sports Training" />
+              <Bullet service="Bite Work" />
+              <Bullet service="Day Care" />
+              <Bullet service="Dock Diving Lessons" />
+              <Bullet service="Vacation Stays" />
+            </Bullets>
+            <CallToAction>
+              <Message>
+                Please contact us directly for detailed information on all our
+                services!
+              </Message>
+              <Button type="filled" text="Contact Us" />
+            </CallToAction>
+          </Wrapper>
+        </Additional>
       </Showcase>
     </Layout>
   )

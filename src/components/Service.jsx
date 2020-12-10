@@ -27,8 +27,9 @@ const ImageHolder = styled(Img)`
   border-radius: 3px;
   padding: 1rem;
 `
-const Title = styled.h3`
+const Title = styled.h2`
   color: #333;
+  font-weight: lighter;
   padding-bottom: 1rem;
 `
 const TextArea = styled.div`

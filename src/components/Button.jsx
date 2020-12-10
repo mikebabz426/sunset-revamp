@@ -46,13 +46,13 @@ const OutlinedButton = styled(Link)`
   }
 `
 
-const Button = ({ type, text }) => {
+const Button = ({ type, text, pageLink }) => {
   return (
     <>
       {type === "outlined" ? (
-        <OutlinedButton to="/contact">{text}</OutlinedButton>
+        <OutlinedButton to={pageLink}>{text}</OutlinedButton>
       ) : (
-        <FilledButton to="/services">{text}</FilledButton>
+        <FilledButton to={pageLink}>{text}</FilledButton>
       )}
     </>
   )
