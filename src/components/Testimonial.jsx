@@ -27,6 +27,7 @@ const CardHolder = styled.div`
   text-align: justify;
   background-color: #fff;
   border-radius: 5px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
 `
 
 const Header = styled.div`

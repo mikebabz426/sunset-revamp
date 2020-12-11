@@ -16,20 +16,19 @@ const Showcase = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
+  @media screen and (max-width: 900px) {
     margin: 5rem auto;
+    flex-direction: column;
   }
 `
 const FormSection = styled.div`
   display: flex;
-  padding: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 500px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     max-width: 350px;
     padding: 1rem auto;
   }
@@ -43,7 +42,7 @@ const Label = styled.label`
 `
 
 const StyledField = styled(Field)`
-  width: 100%;
+  width: 80%;
   height: 35px;
   border: 1px solid #ccc;
   background-color: #fff;
@@ -56,15 +55,31 @@ const StyledField = styled(Field)`
 `
 
 const StyledForm = styled(Form)`
+  padding: 0;
+  border-radius: 3px;
+  background-color: #f0f0f0;
   width: 500px;
-  min-height: 600px;
+  min-height: 1100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    min-height: 1366px;
+    padding: 1rem auto;
+  }
+  @media screen and (max-width: 900px) {
+    min-height: 600px;
+    padding: 1rem auto;
+    margin-bottom: 4rem;
+  }
+  @media screen and (max-width: 600px) {
+    width: 350px;
+  }
 `
 const StyledTextArea = styled.textarea`
-  width: 100%;
+  width: 80%;
   min-height: 100px;
   border: 1px solid #ccc;
   background-color: #fff;
@@ -75,7 +90,7 @@ const StyledTextArea = styled.textarea`
 `
 
 const Button = styled.button`
-  width: 100%;
+  width: 80%;
   margin-top: 1rem;
   padding: 1rem;
   background-color: #fd787c;
@@ -102,12 +117,19 @@ const Button = styled.button`
 `
 const Error = styled.p`
   color: #b00020;
+  font-weight: bold;
 `
 
 const ImageHolder = styled(Img)`
   width: 500px;
   height: 600px;
   border-radius: 5px;
+
+  @media screen and (max-width: 1024px) {
+    width: 350px;
+    height: 400px;
+    padding: 1rem auto;
+  }
 
   @media screen and (max-width: 600px) {
     width: 250px;
@@ -137,7 +159,7 @@ const SecondaryEle = styled(Dots)`
   height: 100px;
   bottom: -45px;
   left: -25px;
-  z-index: -10;
+  z-index: -1;
   opacity: 0.7;
   @media screen and (max-width: 600px) {
     bottom: +5px;
@@ -197,7 +219,18 @@ const ContactPage = ({ data }) => {
               >
                 <Field type="hidden" name="bot-field" />
                 <Field type="hidden" name="form-name" value="contact" />
-                <h1>Drop us a line</h1>
+                <h1 style={{ textAlign: "center" }}>
+                  Have questions? We're here for you!
+                </h1>
+                <h3
+                  style={{
+                    textAlign: "center",
+                    marginBottom: "2rem",
+                    fontWeight: "lighter",
+                  }}
+                >
+                  Send us a message for a free consultation
+                </h3>
                 <Label htmlFor="name">Name</Label>
                 <StyledField name="name" type="input" />
                 {errors.name && touched.name ? (

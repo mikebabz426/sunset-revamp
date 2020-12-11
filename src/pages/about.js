@@ -105,17 +105,14 @@ const AboutPage = ({ data }) => {
           </Title>
           <Body>
             We are a facility that travels all over the United States for our
-            clients, we want to help people have better communication with their
-            dogs! We offer more than just obedience, a few of our special
-            services is SAR, service dog work, and so much more! We are a
-            facility that travels all over the United States for our clients, we
-            want to help people have better communication with their dogs! We
-            offer more than just obedience, a few of our special services is
-            SAR, service dog work, and so much more! facility that travels all
-            over the United States for our clients, we want to help people have
-            better communication with their dogs! We offer more than just
-            obedience, a few of our special services is SAR, service dog work,
-            and so much more!
+            clients and we are commited to helping people have better
+            communication with their dogs! Every one of our programs is tailored
+            to your dog's specific needs and goals, this way ensuring you
+            realize your dog's full potential. We offer more than just
+            obedience, a few of our special services include Search and Rescue,
+            service dog work, and so much more! Our mission is simple: to
+            provide dog owners with the highest quality dog training services
+            available.
           </Body>
         </TextArea>
         <ImageWrap>

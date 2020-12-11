@@ -12,6 +12,7 @@ const CardHolder = styled.div`
   text-align: justify;
   background-color: #fff;
   border-radius: 5px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
 `
 
 const ImageHolder = styled(Img)`
@@ -31,16 +32,12 @@ const Body = styled.p`
   line-height: 1.5rem;
   color: #525252;
 `
-const Card = ({ title, fluid }) => {
+const Card = ({ title, fluid, body }) => {
   return (
     <CardHolder>
       <ImageHolder fluid={fluid}></ImageHolder>
       <CardHead>{title}</CardHead>
-      <Body>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-        provident minus animi voluptatum similique itaque commodi! Minus
-        distinctio consequuntur aspernatur.
-      </Body>
+      <Body>{body}</Body>
     </CardHolder>
   )
 }

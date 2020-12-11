@@ -107,10 +107,6 @@ const Wrapper = styled.div`
   min-width: 768px;
   border-bottom: 1px solid #c7c7c7;
 
-  /* @media screen and (min-width: 1024px) {
-    min-width: 768px;
-  } */
-
   @media screen and (max-width: 767px) {
     flex-direction: column;
     min-width: 300px;
@@ -125,6 +121,25 @@ const Bullets = styled.div`
 
   @media screen and (max-width: 767px) {
     padding-bottom: 2rem;
+  }
+`
+const AddWrap = styled.div`
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-width: 900px;
+  border-bottom: 1px solid #c7c7c7;
+
+  @media screen and (max-width: 900px) {
+    min-width: 700px;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    min-width: 300px;
+    padding: 1rem 0;
   }
 `
 
@@ -184,7 +199,7 @@ const ServicesPage = ({ data }) => {
         })}
         <Additional>
           <AdditionalHeadline>Additional Services</AdditionalHeadline>
-          <Wrapper>
+          <AddWrap>
             <Bullets>
               <Bullet service="Scent Work" />
               <Bullet service="Sports Training" />
@@ -198,9 +213,9 @@ const ServicesPage = ({ data }) => {
                 Please contact us directly for detailed information on all our
                 services!
               </Message>
-              <Button type="filled" text="Contact Us" />
+              <Button type="filled" text="Contact Us" pageLink="/contact" />
             </CallToAction>
-          </Wrapper>
+          </AddWrap>
         </Additional>
       </Showcase>
     </Layout>

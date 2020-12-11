@@ -220,13 +220,19 @@ const IndexPage = ({ data }) => {
           Here are some of the services we specialize in
         </SubHeadline>
         <CardArea>
-          <Card title="Off Leash" fluid={offLeash.childImageSharp.fluid} />
+          <Card
+            title="Off Leash"
+            fluid={offLeash.childImageSharp.fluid}
+            body=""
+          />
           <Card
             title="Search and Rescue"
+            body="When someone goes missing in the wilderness, an SAR K9 is trained to pick up on scents left in the area in the last day or so and successfully track them, potentially saving the missing person.  Let us help train your dog to be a hero. "
             fluid={searchRescue.childImageSharp.fluid}
           />
           <Card
             title="Behavioral Issues"
+            body="Has your dog picked up a few bad or annoying habbits?  We can help isolate these issues and correct obsessive or troublesome behaviors. "
             fluid={behavioral.childImageSharp.fluid}
           />
         </CardArea>

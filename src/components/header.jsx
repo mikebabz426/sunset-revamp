@@ -12,6 +12,7 @@ const NavWrap = styled.header`
   top: 0;
   width: 100vw;
   z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 `
 const Nav = styled.nav`
   margin: 0 auto;
@@ -72,6 +73,8 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
   margin: 0 1rem;
   &:hover {
     color: #fff;
