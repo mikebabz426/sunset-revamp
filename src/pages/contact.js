@@ -7,7 +7,6 @@ import Dots from "../assets/dots.svg"
 import { graphql } from "gatsby"
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
-import { publicLoader } from "./../../.cache/loader"
 
 const Showcase = styled.div`
   max-width: 1280px;
