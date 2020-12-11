@@ -217,13 +217,13 @@ const IndexPage = ({ data }) => {
           Get Expert Help Training Your Dog or Puppy
         </SectionHeadline>
         <SubHeadline>
-          Here are some of the services we specialize in
+          Here are some of the services we specialize in!
         </SubHeadline>
         <CardArea>
           <Card
             title="Off Leash"
             fluid={offLeash.childImageSharp.fluid}
-            body=""
+            body="Our exceptional obedience training will give you the opportunity to take your dog with you wherever you go, both on or off leash."
           />
           <Card
             title="Search and Rescue"
@@ -240,7 +240,7 @@ const IndexPage = ({ data }) => {
           <SubHeadline>
             Let us help you get started off on the right... paw.
           </SubHeadline>
-          <Button type="outlined" text="Click Here" pageLink="/contact" />
+          <Button type="outlined" text="Click Here" pageLink="/services" />
           <SubHeadline>to see the full spectrum of our services.</SubHeadline>
         </CalltoAction>
       </Showcase>
@@ -264,9 +264,9 @@ const IndexPage = ({ data }) => {
         </GoodDogSection>
       </Showcase>
       <TestimonialSection>
-        <Headline>Don't take our word for it</Headline>
+        <Headline>Don't take our word for it,</Headline>
         <SubHeadline>
-          Here's what some of our customers had to say about their experience
+          here's what some of our customers had to say about their experience.
         </SubHeadline>
         <Stripe>
           <OffsetContainer>

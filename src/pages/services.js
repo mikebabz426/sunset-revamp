@@ -99,20 +99,7 @@ const AdditionalHeadline = styled.h2`
     padding: 4rem 1rem 2rem 1rem;
   }
 `
-const Wrapper = styled.div`
-  padding: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  min-width: 768px;
-  border-bottom: 1px solid #c7c7c7;
 
-  @media screen and (max-width: 767px) {
-    flex-direction: column;
-    min-width: 300px;
-    padding: 1rem 0;
-  }
-`
 const Bullets = styled.div`
   display: flex;
   flex-direction: column;

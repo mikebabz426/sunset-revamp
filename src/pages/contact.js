@@ -7,6 +7,7 @@ import Dots from "../assets/dots.svg"
 import { graphql } from "gatsby"
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
+import { publicLoader } from "./../../.cache/loader"
 
 const Showcase = styled.div`
   max-width: 1280px;
@@ -167,6 +168,16 @@ const SecondaryEle = styled(Dots)`
   }
 `
 
+const Heading = styled.h1`
+  text-align: center;
+`
+const SubHead = styled.h3`
+  text-align: center;
+  font-weight: lighter;
+  padding: 0rem 2rem 2rem 2rem;
+  line-height: 1.8rem;
+`
+
 const contactSchema = Yup.object().shape({
   name: Yup.string().required().min(3),
   email: Yup.string().email().required(),
@@ -219,18 +230,11 @@ const ContactPage = ({ data }) => {
               >
                 <Field type="hidden" name="bot-field" />
                 <Field type="hidden" name="form-name" value="contact" />
-                <h1 style={{ textAlign: "center" }}>
-                  Have questions? We're here for you!
-                </h1>
-                <h3
-                  style={{
-                    textAlign: "center",
-                    marginBottom: "2rem",
-                    fontWeight: "lighter",
-                  }}
-                >
-                  Send us a message for a free consultation
-                </h3>
+                <Heading>Have questions? We're here for you!</Heading>
+                <SubHead>
+                  Send us a message for a free consultation or call 815-955-0860
+                </SubHead>
+
                 <Label htmlFor="name">Name</Label>
                 <StyledField name="name" type="input" />
                 {errors.name && touched.name ? (
