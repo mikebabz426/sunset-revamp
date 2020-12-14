@@ -7,6 +7,7 @@ import { graphql } from "gatsby"
 import Button from "./../components/Button"
 import Card from "../components/Card"
 import Testimonial from "./../components/Testimonial"
+import { Testimonials } from "./../helpers/services-info"
 import Img from "gatsby-image"
 
 const Headline = styled.h1`
@@ -17,6 +18,11 @@ const Headline = styled.h1`
   max-width: 1280px;
   padding: 0 4rem;
   margin: 0 auto 1.5rem auto;
+
+  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+    margin-top: 20rem;
+    font-size: 38px;
+  }
 
   @media screen and (max-width: 800px) {
     font-size: 38px;
@@ -54,6 +60,16 @@ const Showcase = styled.div`
   @media screen and (min-width: 1024px) {
     max-height: 120vh;
   }
+
+  @media screen and (orientation: landscape) and (max-width: 1100px) and (max-height: 800px) {
+    min-height: 200vh;
+  }
+`
+const DogSection = styled.div`
+  margin: 0 auto;
+  padding: 3rem auto;
+  min-height: 50vh;
+  max-width: 1280;
 `
 const SectionHeadline = styled.h2`
   color: #333;
@@ -155,7 +171,11 @@ const Stripe = styled.div`
   position: relative;
 
   @media screen and (max-width: 800px) {
-    margin: 30rem auto 30rem auto;
+    margin: 20rem auto 20rem auto;
+  }
+
+  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+    margin-bottom: 20rem;
   }
 
   @media screen and (max-width: 600px) {
@@ -171,11 +191,11 @@ const OffsetContainer = styled.div`
   position: absolute;
   top: -200px;
 
-  @media screen and (min-width: 1000px) and (max-width: 1100px) {
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
     width: 990px;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 830px) {
     width: 750px;
     flex-wrap: wrap;
     position: static;
@@ -199,6 +219,67 @@ const Filler = styled.div`
   background-color: #f8f8f8;
 `
 
+const TestimonialHeadline = styled.h1`
+  font-weight: bold;
+  color: #333;
+  font-size: 64px;
+  text-align: center;
+  max-width: 1280px;
+  padding: 0 4rem;
+  margin: 0 auto 1.5rem auto;
+
+  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+    font-size: 48px;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 38px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
+    max-width: 350px;
+    padding: 0 1rem;
+  }
+`
+const TestimonialSub = styled.h3`
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  max-width: 1280;
+  margin: 1rem 1rem;
+  font-size: 20px;
+  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+    margin-bottom: 20rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+  }
+`
+const DogHeadline = styled.h1`
+  font-weight: bold;
+  color: #333;
+  font-size: 64px;
+  text-align: center;
+  max-width: 1280px;
+  padding: 0 4rem;
+  margin: 0 auto 1.5rem auto;
+
+  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+    font-size: 48px;
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 38px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
+    max-width: 350px;
+    padding: 0 1rem;
+  }
+`
 const IndexPage = ({ data }) => {
   const { hero, offLeash, behavioral, searchRescue, bad, angel } = data
 
@@ -244,16 +325,16 @@ const IndexPage = ({ data }) => {
           <SubHeadline>to see the full spectrum of our services.</SubHeadline>
         </CalltoAction>
       </Showcase>
-      <Showcase>
+      <DogSection>
         <BadDogSection>
           <ImageHolder fluid={bad.childImageSharp.fluid}></ImageHolder>
           <TextContainer>
-            <Headline>Got a rebel on your hands?</Headline>
+            <DogHeadline>Got a rebel on your hands?</DogHeadline>
           </TextContainer>
         </BadDogSection>
         <GoodDogSection>
           <TextContainer>
-            <Headline>We Can Help!</Headline>
+            <DogHeadline>We Can Help!</DogHeadline>
             <TextArea>
               We will isolate issues and work on your specific needs to
               successfully correct and shape behavior to allow your dog to
@@ -262,85 +343,27 @@ const IndexPage = ({ data }) => {
           </TextContainer>
           <ImageHolder fluid={angel.childImageSharp.fluid}></ImageHolder>
         </GoodDogSection>
-      </Showcase>
+      </DogSection>
       <TestimonialSection>
-        <Headline>Don't take our word for it,</Headline>
-        <SubHeadline>
+        <TestimonialHeadline>Don't take our word for it,</TestimonialHeadline>
+        <TestimonialSub>
           here's what some of our customers had to say about their experience.
-        </SubHeadline>
+        </TestimonialSub>
         <Stripe>
           <OffsetContainer>
-            <Testimonial name="Elena Rose Weinstein Ortega">
-              Great training facility and great environment for your dog!!
-              Highly recommend this place!
-              <span
-                role="img"
-                aria-label="smiley"
-                style={{ fontStyle: "normal" }}
-              >
-                😃
-              </span>
-            </Testimonial>
-            <Testimonial name="Kendal Henning">
-              Hannah is amazing! My dog Koda completed a 4 week board and train
-              for obedience work, off leash work, and e collar work. He has
-              completely transformed and has been able to learn and grasp so
-              many things at only 6 months old! I am so excited to continue his
-              progression and training at home! Well worth the investment in
-              your dog. Would highly recommend Sunset Canines
-              <span
-                role="img"
-                aria-label="smiley"
-                style={{ fontStyle: "normal" }}
-              >
-                {" "}
-                🤗
-              </span>
-            </Testimonial>
-            <Testimonial name="Grey Marie ">
-              My boys only got a short stay out of Sunset Canines back in July,
-              but I feel that my dog Kenai learned important things about
-              communicating with dogs, and Remi (extreme stranger fear) got the
-              opportunity to work with people besides me which has opened him up
-              more.
-            </Testimonial>
+            {Testimonials.map(quote => (
+              <Testimonial
+                name={quote.name}
+                body={quote.body}
+                key={quote.name}
+              />
+            ))}
           </OffsetContainer>
         </Stripe>
         <MobileContainer>
-          <Testimonial name="Elena Rose Weinstein Ortega">
-            Great training facility and great environment for your dog!! Highly
-            recommend this place!
-            <span
-              role="img"
-              aria-label="smiley"
-              style={{ fontStyle: "normal" }}
-            >
-              😃
-            </span>
-          </Testimonial>
-          <Testimonial name="Kendal Henning">
-            Hannah is amazing! My dog Koda completed a 4 week board and train
-            for obedience work, off leash work, and e collar work. He has
-            completely transformed and has been able to learn and grasp so many
-            things at only 6 months old! I am so excited to continue his
-            progression and training at home! Well worth the investment in your
-            dog. Would highly recommend Sunset Canines
-            <span
-              role="img"
-              aria-label="smiley"
-              style={{ fontStyle: "normal" }}
-            >
-              {" "}
-              🤗
-            </span>
-          </Testimonial>
-          <Testimonial name="Grey Marie ">
-            My boys only got a short stay out of Sunset Canines back in July,
-            but I feel that my dog Kenai learned important things about
-            communicating with dogs, and Remi (extreme stranger fear) got the
-            opportunity to work with people besides me which has opened him up
-            more.
-          </Testimonial>
+          {Testimonials.map(quote => (
+            <Testimonial name={quote.name} body={quote.body} key={quote.name} />
+          ))}
         </MobileContainer>
         <Filler></Filler>
       </TestimonialSection>

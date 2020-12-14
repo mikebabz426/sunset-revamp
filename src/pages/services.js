@@ -145,7 +145,13 @@ const Message = styled.h2`
 
 const ServicesPage = ({ data }) => {
   const { dogs, offLeash, sar, belgian, serviceDog, tricks } = data
-
+  const additionalServices = [
+    "Scent Work",
+    "Sports Training",
+    "Day Care",
+    "Dock Diving Lessons",
+    "Vacation Stays",
+  ]
   const getImgSrc = name => {
     switch (name) {
       case "Off Leash Training":
@@ -188,12 +194,9 @@ const ServicesPage = ({ data }) => {
           <AdditionalHeadline>Additional Services</AdditionalHeadline>
           <AddWrap>
             <Bullets>
-              <Bullet service="Scent Work" />
-              <Bullet service="Sports Training" />
-              <Bullet service="Bite Work" />
-              <Bullet service="Day Care" />
-              <Bullet service="Dock Diving Lessons" />
-              <Bullet service="Vacation Stays" />
+              {additionalServices.map(serv => (
+                <Bullet service={serv} key={serv} />
+              ))}
             </Bullets>
             <CallToAction>
               <Message>

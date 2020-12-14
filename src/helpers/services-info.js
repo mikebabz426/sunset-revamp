@@ -25,3 +25,21 @@ export const ProvidedServices = [
       "Do you want your dog to be the star of the show?  Make your dog or puppy the center of attention around your friends with our specialized tricks training.  We believe any dog can be trained and aim to disprove the old saying `You cant teach an old dog new tricks`.  We will get your dog to master tricks such as: Shake Hands, Play Dead, Roll Over and many others.",
   },
 ]
+
+export const Testimonials = [
+  {
+    name: "Elena Rose Weinstein Ortega",
+    body:
+      "Great training facility and great environment for your dog!! Highly recommend this place!",
+  },
+  {
+    name: "Kendal Henning",
+    body:
+      "   Hannah is amazing! My dog Koda completed a 4 week board and train for obedience work, off leash work, and e collar work. He has completely transformed and has been able to learn and grasp so many things at only 6 months old! I am so excited to continue his progression and training at home! Well worth the investment in your dog. Would highly recommend Sunset Canines",
+  },
+  {
+    name: "Grey Marie",
+    body:
+      " My boys only got a short stay out of Sunset Canines back in July, but I feel that my dog Kenai learned important things about communicating with dogs, and Remi (extreme stranger fear) got the opportunity to work with people besides me which has opened him up more.",
+  },
+]

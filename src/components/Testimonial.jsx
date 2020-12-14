@@ -28,6 +28,9 @@ const CardHolder = styled.div`
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+
+  /* @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+  } */
 `
 
 const Header = styled.div`
@@ -60,14 +63,14 @@ const BodySection = styled.div`
   position: relative;
 `
 
-const Testimonial = ({ name, children }) => {
+const Testimonial = ({ name, body }) => {
   const classes = useStyles()
   return (
     <CardHolder>
       <Header></Header>
       <BodySection>
         <FormatQuoteIcon className={classes.root} />
-        <Body>{children}</Body>
+        <Body>{body}</Body>
         <Name>- {name}</Name>
       </BodySection>
     </CardHolder>
