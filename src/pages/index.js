@@ -19,7 +19,7 @@ const Headline = styled.h1`
   padding: 0 4rem;
   margin: 0 auto 1.5rem auto;
 
-  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+  @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
     margin-top: 20rem;
     font-size: 38px;
   }
@@ -73,11 +73,21 @@ const DogSection = styled.div`
 `
 const SectionHeadline = styled.h2`
   color: #333;
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
   max-width: 1280;
   padding: 4rem 0 2rem 0;
-  font-size: 32px;
+  font-size: 36px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 900px) {
+    font-size: 28px;
+    padding: 4rem 1rem 2rem 1rem;
+    max-width: 800px;
+  }
+  @media screen and (max-width: 450px) {
+    max-width: 320px;
+  }
 `
 const SubHeadline = styled.h3`
   color: #333;
@@ -86,6 +96,10 @@ const SubHeadline = styled.h3`
   max-width: 1280;
   margin: 1rem 0;
   font-size: 20px;
+
+  @media screen and (max-width: 450px) {
+    max-width: 320px;
+  }
 `
 const CardArea = styled.div`
   margin: 3rem auto;
@@ -109,7 +123,7 @@ const CalltoAction = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 `
@@ -170,11 +184,11 @@ const Stripe = styled.div`
   align-items: center;
   position: relative;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     margin: 20rem auto 20rem auto;
   }
 
-  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+  @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
     margin-bottom: 20rem;
   }
 
@@ -195,7 +209,7 @@ const OffsetContainer = styled.div`
     width: 990px;
   }
 
-  @media screen and (max-width: 830px) {
+  @media screen and (max-width: 900px) {
     width: 750px;
     flex-wrap: wrap;
     position: static;
@@ -228,7 +242,7 @@ const TestimonialHeadline = styled.h1`
   padding: 0 4rem;
   margin: 0 auto 1.5rem auto;
 
-  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+  @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
     font-size: 48px;
   }
 
@@ -249,7 +263,7 @@ const TestimonialSub = styled.h3`
   max-width: 1280;
   margin: 1rem 1rem;
   font-size: 20px;
-  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+  @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
     margin-bottom: 20rem;
   }
 
@@ -266,7 +280,7 @@ const DogHeadline = styled.h1`
   padding: 0 4rem;
   margin: 0 auto 1.5rem auto;
 
-  @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
+  @media screen and (orientation: landscape) and (max-width: 900px) and (max-height: 450px) {
     font-size: 48px;
   }
 
