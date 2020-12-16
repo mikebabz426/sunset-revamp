@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import Dots from "../assets/dots.svg"
 import { graphql } from "gatsby"
+import { motion } from "framer-motion"
 
 const Showcase = styled.div`
   max-width: 1280px;
@@ -20,7 +21,7 @@ const Showcase = styled.div`
   }
 `
 
-const TextArea = styled.div`
+const TextArea = styled(motion.div)`
   display: flex;
   padding: 1rem;
   padding-top: 0;
@@ -41,7 +42,7 @@ const Title = styled.h1`
   margin-top: 0;
 `
 
-const Highlight = styled.span`
+const Highlight = styled(motion.span)`
   color: #f85a4f;
 `
 const Body = styled.p`
@@ -99,9 +100,28 @@ const AboutPage = ({ data }) => {
     <Layout>
       <SEO title="About" />
       <Showcase>
-        <TextArea>
+        <TextArea
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: -100 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 1 }}
+        >
           <Title>
-            About <Highlight>Us</Highlight>
+            About{" "}
+            <Highlight
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+              transition={{ delay: 1.1 }}
+            >
+              Us
+            </Highlight>
           </Title>
           <Body>
             We are a facility that travels all over the United States for our

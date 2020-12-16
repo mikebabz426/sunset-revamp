@@ -7,6 +7,7 @@ import Dots from "../assets/dots.svg"
 import { graphql } from "gatsby"
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
+import { motion } from "framer-motion"
 
 const Showcase = styled.div`
   max-width: 1280px;
@@ -167,10 +168,10 @@ const SecondaryEle = styled(Dots)`
   }
 `
 
-const Heading = styled.h1`
+const Heading = styled(motion.h1)`
   text-align: center;
 `
-const SubHead = styled.h3`
+const SubHead = styled(motion.h3)`
   text-align: center;
   font-weight: lighter;
   padding: 0rem 2rem 2rem 2rem;
@@ -189,6 +190,11 @@ const ContactPage = ({ data }) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
+  }
+
+  const variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
   }
 
   return (
@@ -229,8 +235,20 @@ const ContactPage = ({ data }) => {
               >
                 <Field type="hidden" name="bot-field" />
                 <Field type="hidden" name="form-name" value="contact" />
-                <Heading>Have questions? We're here for you!</Heading>
-                <SubHead>
+                <Heading
+                  initial="hidden"
+                  animate="visible"
+                  variants={variants}
+                  transition={{ duration: 1 }}
+                >
+                  Have questions? We're here for you!
+                </Heading>
+                <SubHead
+                  initial="hidden"
+                  animate="visible"
+                  variants={variants}
+                  transition={{ duration: 1.3 }}
+                >
                   Send us a message for a free consultation or call 815-955-0860
                 </SubHead>
 

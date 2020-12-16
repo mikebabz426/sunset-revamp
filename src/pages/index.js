@@ -9,8 +9,9 @@ import Card from "../components/Card"
 import Testimonial from "./../components/Testimonial"
 import { Testimonials } from "./../helpers/services-info"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
 
-const Headline = styled.h1`
+const Headline = styled(motion.h1)`
   font-weight: bold;
   color: #333;
   font-size: 64px;
@@ -296,12 +297,23 @@ const DogHeadline = styled.h1`
 `
 const IndexPage = ({ data }) => {
   const { hero, offLeash, behavioral, searchRescue, bad, angel } = data
+  const variants = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
+  }
 
   return (
     <Layout>
       <SEO title="Home" />
       <BgImage className="hero" fluid={hero.childImageSharp.fluid}>
-        <Headline>We Provide Proffessional Training for Your Pets</Headline>
+        <Headline
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          transition={{ duration: 1 }}
+        >
+          We Provide Proffessional Training for Your Pets
+        </Headline>
         <ButtonBox>
           <Button type="filled" text="What We Offer" pageLink="/services" />
           <Button type="outlined" text="Contact Us" pageLink="/contact" />

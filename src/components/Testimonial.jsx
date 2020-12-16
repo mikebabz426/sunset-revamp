@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import FormatQuoteIcon from "@material-ui/icons/FormatQuote"
 import { makeStyles } from "@material-ui/core/styles"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +18,7 @@ const useStyles = makeStyles({
   },
 })
 
-const CardHolder = styled.div`
+const CardHolder = styled(motion.div)`
   margin: 1rem auto;
   max-width: 320px;
   max-height: 500px;
@@ -28,9 +30,6 @@ const CardHolder = styled.div`
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
-
-  /* @media screen and (orientation: landscape) and (max-width: 850px) and (max-height: 450px) {
-  } */
 `
 
 const Header = styled.div`
@@ -65,8 +64,25 @@ const BodySection = styled.div`
 
 const Testimonial = ({ name, body }) => {
   const classes = useStyles()
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    }
+  }, [controls, inView])
   return (
-    <CardHolder>
+    <CardHolder
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={{
+        visible: { y: 0, opacity: 1 },
+        hidden: { y: -100, opacity: 0 },
+      }}
+      transition={{ duration: 1 }}
+    >
       <Header></Header>
       <BodySection>
         <FormatQuoteIcon className={classes.root} />

@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -50,10 +52,29 @@ const Description = styled.p`
 `
 
 const Service = ({ dir, name, src, desc }) => {
+  const [ref, inView] = useInView()
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    }
+  }, [controls, inView])
+
   let layout
   if (dir === "left") {
     layout = (
-      <Container clmn="reverse">
+      <Container
+        clmn="reverse"
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={{
+          visible: { opacity: 1 },
+          hidden: { opacity: 0 },
+        }}
+        transition={{ duration: 1 }}
+      >
         <ImageHolder fluid={src} />
         <TextArea>
           <Title>{name}</Title>
@@ -63,7 +84,16 @@ const Service = ({ dir, name, src, desc }) => {
     )
   } else if (dir === "right") {
     layout = (
-      <Container>
+      <Container
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={{
+          visible: { opacity: 1 },
+          hidden: { opacity: 0 },
+        }}
+        transition={{ duration: 0.8 }}
+      >
         <TextArea>
           <Title>{name}</Title>
           <Description>{desc}</Description>
