@@ -95,7 +95,7 @@ const SubHeadline = styled.h3`
   font-weight: 500;
   text-align: center;
   max-width: 1280;
-  margin: 1rem 0;
+  margin: 1rem auto;
   font-size: 20px;
 
   @media screen and (max-width: 450px) {
