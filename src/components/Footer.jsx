@@ -3,6 +3,7 @@ import styled from "styled-components"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import TwitterIcon from "@material-ui/icons/Twitter"
+import FavoriteIcon from "@material-ui/icons/Favorite"
 
 const Container = styled.div`
   width: 100vw;
@@ -88,6 +89,18 @@ const Footer = () => {
       <SecondaryText>
         {" "}
         © {new Date().getFullYear()}, Sunset Canines
+      </SecondaryText>
+      <SecondaryText style={{ marginTop: 3 }}>
+        Made with <FavoriteIcon style={{ fontSize: "small", color: "#333" }} />{" "}
+        by{" "}
+        <a
+          href="https://www.mbabetchki.com"
+          aria-label="link to developer website"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          MB Dev
+        </a>
       </SecondaryText>
     </Container>
   )
