@@ -67,7 +67,7 @@ const Footer = () => {
         </SocialIconBox>
         <SocialIconBox>
           <StyledLink
-            href="https://www.instagram.com/sunset.canines"
+            href="https://www.instagram.com/vonrosendornen/"
             aria-label="link to instagram"
             target="_blank"
             rel="noopener noreferrer"
